@@ -1,0 +1,68 @@
+:root {
+    --dot-size: 50px;
+    --screen-width: 1000px;
+}
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+section {
+    height: 100vh;
+    position: relative;
+}
+
+.dot {
+    height: var(--dot-size);
+    width: var(--dot-size);
+    border-radius: var(--dot-size);
+    animation-duration: 2s;
+    position: relative;
+    animation-iteration-count: 10;
+}
+
+.dot-horizontal {
+    animation-name: left-right;
+    background-color: red;
+}
+
+.dot-vertical {
+    animation-name: up-down;
+    background-color: blue;
+    position: absolute;
+    left: 50vw;
+}
+
+.dot-diagonal--left {
+    background-color: green;
+    animation-name: diagonal-left;
+}
+
+.dot-diagonal--right {
+    background-color: yellow;
+    animation-name: diagonal-right;
+}
+
+@keyframes left-right {
+  0%    { left: 0; }
+  50%   { left: 80vw;}
+  100%  { left: 0; }
+}
+
+@keyframes up-down {
+  0%    { top: 0; }
+  50%   { top: 80vh; }
+  100%  { top: 0; }
+}
+
+@keyframes diagonal-left {
+  0%    { top: 0; left: 90vw; }
+  50%   { top: 80vh; left: 0; }
+  100%  { top: 0; left: 90vw; }
+}
+
+@keyframes diagonal-right {
+  0%    { top: 0; left: 0; }
+  50%   { top: 80vh; left: 80vw; }
+  100%  { top: 0; left: 0; }
+}
