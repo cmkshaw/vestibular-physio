@@ -1,15 +1,30 @@
 :root {
     --dot-size: 50px;
     --screen-width: 1000px;
+    --padding-unit: 8px;
 }
 
 html {
+    border: 20px solid #edfdfa;
     font-family: 'Lato', sans-serif;
 }
 
+h1 {
+    font-size: 1.4rem;
+    color: #c5ab00;
+}
+
 section {
-    height: 100vh;
+    height: 90vh;
     position: relative;
+}
+
+.center-vertically {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .dot {
@@ -19,28 +34,49 @@ section {
     animation-duration: 2s;
     position: relative;
     animation-iteration-count: 10;
+    animation-timing-function: linear;
 }
 
 .dot-horizontal {
+    background-color: #2196f3;
+}
+
+.dot-horizontal.animate {
     animation-name: left-right;
-    background-color: red;
 }
 
 .dot-vertical {
-    animation-name: up-down;
-    background-color: blue;
+    background-color: #f26b9e;
     position: absolute;
     left: 50vw;
 }
 
+.dot-vertical.animate {
+  animation-name: up-down;
+}
+
 .dot-diagonal--left {
-    background-color: green;
+    background-color: #db7f4b;
+}
+
+.dot-diagonal--left.animate {
     animation-name: diagonal-left;
 }
 
 .dot-diagonal--right {
-    background-color: yellow;
+    background-color: #b25cc9;
+}
+
+.dot-diagonal--right.animate {
     animation-name: diagonal-right;
+}
+
+.letter-box {
+  padding: var(--padding-unit) calc(var(--padding-unit)*2);
+  font-size: 1.7rem;
+  border: 1px solid grey;
+  display: inline-block;
+  margin-bottom: calc(var(--padding-unit)*3);
 }
 
 @keyframes left-right {
