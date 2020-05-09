@@ -1,12 +1,14 @@
-var btnStartTimer = document.getElementById('s1-timer');
-var buttons = document.querySelectorAll('.button');
+const btnStartTimer = document.getElementById('s1-timer');
+const buttons = document.querySelectorAll('.button');
 
 btnStartTimer.addEventListener('click', function (event) {
-   setTimeout(startTimer, 60000);
+    setTimeout(setTimer, 60000);
+    btnStartTimer.innerHTML = 'In Progress';
 });
 
-function startTimer() {
+function setTimer() {
     alert("All done.");
+    btnStartTimer.innerHTML = 'Set Timer';
 }
 
 buttons.forEach(function (button) {
